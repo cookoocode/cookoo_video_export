@@ -22,3 +22,7 @@ flutter:
         pluginClass: CookooVideoExportPlugin
       ios:
         pluginClass: CookooVideoExportPlugin
+        sharedDarwinSource: true
+      macos:
+        pluginClass: CookooVideoExportPlugin
+        sharedDarwinSource: true

@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'ios/cookoo_video_export/Sources/cookoo_video_export/AudioMux.swift'
+SOURCE = ROOT / 'darwin/cookoo_video_export/Sources/cookoo_video_export/AudioMux.swift'
 
 
 def box(kind, payload):

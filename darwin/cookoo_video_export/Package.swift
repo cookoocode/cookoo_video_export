@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "cookoo_video_export",
     platforms: [
-        .iOS("15.0")
+        .iOS("15.0"),
+        .macOS("12.0")
     ],
     products: [
         .library(name: "cookoo-video-export", targets: ["cookoo_video_export"])

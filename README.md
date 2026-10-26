@@ -9,7 +9,7 @@ Requires Flutter 3.44+ (Android build uses AGP 9 built-in Kotlin).
 
 ## Scope
 
-- iOS 15+: AVAssetWriter, H.264/HEVC MP4 and device-supported ProRes MOV.
+- iOS 15+ and macOS 12+: a shared Darwin AVAssetWriter implementation, H.264/HEVC MP4 and device-supported ProRes MOV.
 - Android 24+: MediaCodec/MediaMuxer, H.264/HEVC MP4.
 - Sequential premultiplied RGBA frames with rational timestamps and bounded back-pressure.
 - Device capabilities, exact requested-size/rate probe, storage capacity, typed failures and cancellation cleanup.
@@ -18,7 +18,9 @@ Requires Flutter 3.44+ (Android build uses AGP 9 built-in Kotlin).
 
 The package does not import app models, Riverpod, Firebase, ads, subscriptions, galleries or share UI. It does not record the screen. Callers own image rendering, progress, foreground/background policy and final file destinations. No network access or telemetry is performed by the encoder.
 
-Web, PNG ZIP sequences and desktop are not implemented by this plugin. LastReel retains its existing browser and PNG implementations.
+Web, PNG ZIP sequences, Windows and Linux are not implemented by this plugin. LastReel retains its existing browser and PNG implementations.
+
+The Apple sources live in `darwin/`, registered with `sharedDarwinSource` for iOS and macOS. Only the Flutter framework import and registrar messenger access differ between those targets.
 
 ## Installation
 

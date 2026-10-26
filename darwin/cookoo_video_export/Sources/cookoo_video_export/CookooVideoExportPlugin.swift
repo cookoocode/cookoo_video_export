@@ -1,6 +1,10 @@
 import AVFoundation
 import Accelerate
+#if os(macOS)
+import FlutterMacOS
+#else
 import Flutter
+#endif
 import VideoToolbox
 
 /// The native half of `NativeVideoEncoder` (lib/features/export/data/):
@@ -23,7 +27,12 @@ public final class CookooVideoExportPlugin: NSObject, FlutterPlugin {
   private var audioJobs: [Int: AudioMuxJob] = [:]
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "cookoo_video_export/encoder", binaryMessenger: registrar.messenger())
+    #if os(macOS)
+    let messenger = registrar.messenger
+    #else
+    let messenger = registrar.messenger()
+    #endif
+    let channel = FlutterMethodChannel(name: "cookoo_video_export/encoder", binaryMessenger: messenger)
     registrar.addMethodCallDelegate(CookooVideoExportPlugin(), channel: channel)
   }
 

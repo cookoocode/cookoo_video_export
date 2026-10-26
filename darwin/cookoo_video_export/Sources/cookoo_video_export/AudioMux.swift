@@ -1,5 +1,9 @@
 import AVFoundation
+#if os(macOS)
+import FlutterMacOS
+#else
 import Flutter
+#endif
 
 /// Encode mixed PCM to AAC first, then use AVFoundation passthrough to
 /// preserve compressed video timing (including negative DTS for B-frames).

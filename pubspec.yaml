@@ -1,0 +1,24 @@
+name: cookoo_video_export
+description: Deterministic Flutter frame encoding using AVFoundation and MediaCodec, with local audio muxing.
+version: 0.1.0
+publish_to: none
+repository: https://github.com/cookoocode/cookoo_video_export
+issue_tracker: https://github.com/cookoocode/cookoo_video_export/issues
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+  flutter: '>=3.44.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.cookoo.cookoo_video_export
+        pluginClass: CookooVideoExportPlugin
+      ios:
+        pluginClass: CookooVideoExportPlugin
